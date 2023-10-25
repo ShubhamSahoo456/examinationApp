@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import FloatButtonGroup from "../../components/FloatButtonGroup";
 import AddSchoolModal from "../../components/modals/AddSchoolModal";
+import { exportToExcel } from "../../components/helper/helper";
 const columns = [
   {
     title: "Module name",
@@ -72,6 +73,7 @@ const AdminQuestionpage = () => {
           icon={<DownloadOutlined />}
           type="primary"
           shape="circle"
+          onClick={() => exportToExcel(data)}
         />
       </FloatButtonGroup>
       <AddSchoolModal open={StudentOpen} setOpen={() => setStudentOpen(false)}>

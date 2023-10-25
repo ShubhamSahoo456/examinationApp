@@ -8,6 +8,7 @@ import {
   UploadOutlined,
 } from "@ant-design/icons";
 import AddSchoolModal from "../../components/modals/AddSchoolModal";
+import { exportToExcel } from "../../components/helper/helper";
 
 const columns = [
   {
@@ -109,6 +110,7 @@ const AdminSchoolPage = () => {
           icon={<DownloadOutlined />}
           type="primary"
           shape="circle"
+          onClick={() => exportToExcel(data)}
         />
       </FloatButton.Group>
       <AddSchoolModal open={SchoolOpen} setOpen={() => setSchoolOpen(false)} />
