@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import TabbleComponent from "../../components/Table";
-import { FloatButton } from "antd";
+import {
+  Col,
+  FloatButton,
+  Form,
+  Input,
+  InputNumber,
+  Row,
+  Select,
+  Space,
+  Upload,
+} from "antd";
 import {
   CloseOutlined,
   DownloadOutlined,
+  LoadingOutlined,
   PlusOutlined,
   UploadOutlined,
 } from "@ant-design/icons";
@@ -90,6 +101,17 @@ const onChange = (pagination, filters, sorter, extra) => {
 };
 const AdminSchoolPage = () => {
   const [SchoolOpen, setSchoolOpen] = useState(false);
+
+  const uploadButton = (
+    <div>
+      <PlusOutlined />
+      <div
+        style={{
+          marginTop: 8,
+        }}
+      ></div>
+    </div>
+  );
   return (
     <>
       <TabbleComponent columns={columns} data={data} onChange={onChange} />
@@ -119,7 +141,96 @@ const AdminSchoolPage = () => {
           onClick={() => exportToExcel(data)}
         />
       </FloatButton.Group>
-      <AddSchoolModal open={SchoolOpen} setOpen={() => setSchoolOpen(false)} />
+      <AddSchoolModal open={SchoolOpen} setOpen={() => setSchoolOpen(false)}>
+        <Form name="trigger" layout="vertical" autoComplete="off">
+          <Row gutter={16}>
+            <Col md={8}>
+              <Form.Item label="School Name" required name="schoolName">
+                <Input placeholder="Enter School Name" />
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item label="Select School Type" required name="schoolType">
+                <Select allowClear placeholder="Select School Type">
+                  <Select.Option>Government</Select.Option>
+                  <Select.Option>Private</Select.Option>
+                  <Select.Option>Others</Select.Option>
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item label="Contact Number" required name="contact">
+                <Input max={10} addonBefore="+91" />
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item label="School Website" required name="schoolWebsite">
+                <Input addonBefore="https://" />
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item label="School Number" required name="schoolNumber">
+                <Input max={10} addonBefore="+91" />
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item
+                label="School Email Address"
+                required
+                name="schoolEmail"
+              >
+                <Input placeholder="Enter School Email" />
+              </Form.Item>
+            </Col>
+            <Col md={12}>
+              <Form.Item label="Enter Full Address" name="schoolAddress">
+                <Input.TextArea
+                  showCount
+                  maxLength={100}
+                  style={{ height: 100, resize: "none" }}
+                />
+              </Form.Item>
+            </Col>
+            <Col
+              md={12}
+              className="d-flex align-items-center justify-content-center"
+            >
+              <Form.Item name="schoolLogo" label="Upload Logo">
+                <Upload
+                  name="avatar"
+                  listType="picture-card"
+                  className="avatar-uploader"
+                  showUploadList={false}
+                  action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+                  // beforeUpload={beforeUpload}
+                  // onChange={handleChange}
+                >
+                  {uploadButton}
+                </Upload>
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item label="Enter Username" required name="userName">
+                <Input placeholder="Enter Username" />
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item label="Enter Password" required name="password">
+                <Input placeholder="Enter Username" type="password" />
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item
+                label="Confirm Password"
+                required
+                name="confirmPassword"
+              >
+                <Input placeholder="Enter Confirm Password" type="password" />
+              </Form.Item>
+            </Col>
+          </Row>
+        </Form>
+      </AddSchoolModal>
     </>
   );
 };

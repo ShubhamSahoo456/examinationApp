@@ -84,28 +84,28 @@ const AdminQuestionpage = () => {
       <AddSchoolModal open={StudentOpen} setOpen={() => setStudentOpen(false)}>
         <Form name="trigger" layout="vertical" autoComplete="off">
           <Row gutter={16}>
-            <Col md={6}>
+            <Col md={8}>
               <Form.Item label="School Name" required name="schoolName">
                 <Select allowClear placeholder="Select School">
                   <Select.Option>DPS</Select.Option>
                 </Select>
               </Form.Item>
             </Col>
-            <Col md={6}>
+            <Col md={8}>
               <Form.Item label="Select Subject" required name="module">
                 <Select allowClear placeholder="Select Subject">
                   <Select.Option>Science</Select.Option>
                 </Select>
               </Form.Item>
             </Col>
-            <Col md={6}>
+            <Col md={4}>
               <Form.Item label="Select Class" required name="class">
                 <Select allowClear placeholder="Select Class">
                   <Select.Option>10</Select.Option>
                 </Select>
               </Form.Item>
             </Col>
-            <Col md={6}>
+            <Col md={4}>
               <Form.Item label="Select Section" required name="section">
                 <Select allowClear placeholder="Select Section">
                   <Select.Option>A</Select.Option>
