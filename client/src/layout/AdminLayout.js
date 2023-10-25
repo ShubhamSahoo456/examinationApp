@@ -66,7 +66,11 @@ const AdminLayout = ({ children }) => {
             },
             {
               key: "4",
-              icon: <QuestionCircleFilled />,
+              icon: (
+                <NavLink to="/admin/question">
+                  <QuestionCircleFilled />
+                </NavLink>
+              ),
               label: "Questions",
             },
           ]}

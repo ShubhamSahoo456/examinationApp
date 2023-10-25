@@ -10,61 +10,52 @@ import FloatButtonGroup from "../../components/FloatButtonGroup";
 import AddSchoolModal from "../../components/modals/AddSchoolModal";
 const columns = [
   {
-    title: "Exam key",
-    dataIndex: "examKey",
-    width: "10%",
-  },
-  {
     title: "Module name",
     dataIndex: "moduleName",
     sorter: (a, b) => a.age - b.age,
     width: "10%",
   },
   {
-    title: "Time Limit",
-    dataIndex: "timeLimit",
-    width: "10%",
+    title: "Question",
+    dataIndex: "question",
+    width: "30%",
   },
   {
-    title: "Question",
-    dataIndex: "questionsCount",
+    title: "Answer",
+    dataIndex: "correctAnswer",
     width: "10%",
   },
 ];
 const data = [
   {
     key: "1",
-    examKey: "14012",
     moduleName: "Hindi",
-    timeLimit: 60,
-    questionsCount: 20,
+    question: "What is your name",
+    correctAnswer: "shubham",
   },
   {
     key: "2",
-    examKey: "14012",
     moduleName: "Hindi",
-    timeLimit: 60,
-    questionsCount: 20,
+    question: "What is your name",
+    correctAnswer: "shubham",
   },
   {
     key: "3",
-    examKey: "14012",
     moduleName: "Hindi",
-    timeLimit: 60,
-    questionsCount: 20,
+    question: "What is your name",
+    correctAnswer: "shubham",
   },
   {
     key: "4",
-    examKey: "14012",
     moduleName: "Hindi",
-    timeLimit: 60,
-    questionsCount: 20,
+    question: "What is your name",
+    correctAnswer: "shubham",
   },
 ];
 const onChange = (pagination, filters, sorter, extra) => {
   console.log("params", pagination, filters, sorter, extra);
 };
-const AdminExamPage = () => {
+const AdminQuestionpage = () => {
   const [StudentOpen, setStudentOpen] = useState(false);
   return (
     <>
@@ -83,12 +74,11 @@ const AdminExamPage = () => {
           shape="circle"
         />
       </FloatButtonGroup>
-      <AddSchoolModal
-        open={StudentOpen}
-        setOpen={() => setStudentOpen(false)}
-      />
+      <AddSchoolModal open={StudentOpen} setOpen={() => setStudentOpen(false)}>
+        <h1>vjgvjd</h1>
+      </AddSchoolModal>
     </>
   );
 };
 
-export default AdminExamPage;
+export default AdminQuestionpage;

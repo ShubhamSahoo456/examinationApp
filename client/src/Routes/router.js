@@ -9,6 +9,9 @@ const AdminStudentPage = lazy(() =>
 const AdminExamPage = lazy(() =>
   import("../pages/AdminExamPage/AdminExamPage")
 );
+const AdminQuestionpage = lazy(() =>
+  import("../pages/AdminQuestionsPage/AdminQuestionPage")
+);
 
 const routes = [
   {
@@ -25,6 +28,11 @@ const routes = [
     path: "/admin/exam",
     exact: true,
     Component: AdminExamPage,
+  },
+  {
+    path: "/admin/question",
+    exact: true,
+    Component: AdminQuestionpage,
   },
 ];
 

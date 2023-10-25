@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import { Modal } from "antd";
-const AddSchoolModal = ({ open, setOpen }) => {
+const AddSchoolModal = ({ children, open, setOpen, title = "" }) => {
   return (
     <>
       <Modal
-        title="Modal 1000px width"
+        title={title}
         centered
         open={open}
         onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
         width={1000}
       >
-        <p>some contents...</p>
-        <p>some contents...</p>
-        <p>some contents...</p>
+        {children}
       </Modal>
     </>
   );
