@@ -5,6 +5,7 @@ import {
   DownloadOutlined,
   PlusOutlined,
   UploadOutlined,
+  UserAddOutlined,
 } from "@ant-design/icons";
 import FloatButtonGroup from "../../components/FloatButtonGroup";
 import AddSchoolModal from "../../components/modals/AddSchoolModal";
@@ -64,7 +65,7 @@ const AdminStudentPage = () => {
       <FloatButtonGroup>
         <FloatButton
           onClick={() => setStudentOpen(true)}
-          icon={<PlusOutlined />}
+          icon={<UserAddOutlined />}
           type="primary"
           shape="circle"
         />

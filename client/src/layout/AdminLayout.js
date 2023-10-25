@@ -9,6 +9,9 @@ import {
   HomeOutlined,
   BookOutlined,
   QuestionCircleFilled,
+  ProfileOutlined,
+  LogoutOutlined,
+  SettingOutlined,
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 import { Layout, Menu, Button, theme } from "antd";
@@ -72,6 +75,23 @@ const AdminLayout = ({ children }) => {
                 </NavLink>
               ),
               label: "Questions",
+            },
+            {
+              key: "5",
+              icon: <SettingOutlined />,
+              label: "Settings",
+              children: [
+                {
+                  key: "6",
+                  icon: <LogoutOutlined />,
+                  label: "Logout",
+                },
+                {
+                  key: "7",
+                  icon: <UserOutlined />,
+                  label: "profile",
+                },
+              ],
             },
           ]}
         />
