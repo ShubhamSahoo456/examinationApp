@@ -113,6 +113,7 @@ const AdminLayout = ({ children }) => {
               height: 64,
             }}
           />
+          MyndKare Career Assessment Platform
         </Header>
         <Content
           style={{
