@@ -132,7 +132,6 @@ const AdminSchoolPage = () => {
           type="primary"
           shape="circle"
           onClick={() => uploadFromExcel(data)}
-
         />
         <FloatButton
           icon={<DownloadOutlined />}

@@ -12,20 +12,18 @@ import {
   ProfileOutlined,
   LogoutOutlined,
   SettingOutlined,
+  TabletFilled,
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
-import { Layout, Menu, Button, theme } from "antd";
+import { Layout, Menu, Button, theme, Image } from "antd";
 const { Header, Sider, Content } = Layout;
-const items1 = ["1", "2", "3"].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}));
 
 const AdminLayout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
   return (
     <Layout>
       <Sider
@@ -38,10 +36,10 @@ const AdminLayout = ({ children }) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={[window.location.pathname.split("/")[2]]}
           items={[
             {
-              key: "1",
+              key: "school",
               icon: (
                 <NavLink to="/admin/school">
                   <HomeOutlined />
@@ -50,7 +48,7 @@ const AdminLayout = ({ children }) => {
               label: "School",
             },
             {
-              key: "2",
+              key: "student",
               icon: (
                 <NavLink to="/admin/student">
                   <TeamOutlined />
@@ -59,7 +57,7 @@ const AdminLayout = ({ children }) => {
               label: "Student",
             },
             {
-              key: "3",
+              key: "exam",
               icon: (
                 <NavLink to="/admin/exam">
                   <BookOutlined />
@@ -68,7 +66,7 @@ const AdminLayout = ({ children }) => {
               label: "Exams",
             },
             {
-              key: "4",
+              key: "question",
               icon: (
                 <NavLink to="/admin/question">
                   <QuestionCircleFilled />
@@ -77,17 +75,26 @@ const AdminLayout = ({ children }) => {
               label: "Questions",
             },
             {
-              key: "5",
+              key: "class",
+              icon: (
+                <NavLink to="/admin/class">
+                  <TabletFilled />
+                </NavLink>
+              ),
+              label: "Classes & Sections",
+            },
+            {
+              key: "settings",
               icon: <SettingOutlined />,
               label: "Settings",
               children: [
                 {
-                  key: "6",
+                  key: "logout",
                   icon: <LogoutOutlined />,
                   label: "Logout",
                 },
                 {
-                  key: "7",
+                  key: "profile",
                   icon: <UserOutlined />,
                   label: "profile",
                 },
@@ -114,6 +121,12 @@ const AdminLayout = ({ children }) => {
             }}
           />
           MyndKare Career Assessment Platform
+          <Image
+            className="img_display"
+            width={100}
+            height={50}
+            src="https://www.myndkare.com/wp-content/uploads/2021/05/cropped-myndkare-logo-115x57.png"
+          />
         </Header>
         <Content
           style={{

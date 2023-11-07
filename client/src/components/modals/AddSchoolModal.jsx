@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Modal } from "antd";
-const AddSchoolModal = ({ children, open, setOpen, title = "" }) => {
+const AddSchoolModal = ({
+  children,
+  open,
+  setOpen,
+  title = "",
+  width = 1000,
+}) => {
   return (
     <>
       <Modal
@@ -9,7 +15,7 @@ const AddSchoolModal = ({ children, open, setOpen, title = "" }) => {
         open={open}
         onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
-        width={1000}
+        width={width}
       >
         {children}
       </Modal>

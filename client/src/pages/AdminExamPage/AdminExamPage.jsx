@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import TabbleComponent from "../../components/Table";
-import { FloatButton } from "antd";
 import {
+  Col,
+  DatePicker,
+  FloatButton,
+  Form,
+  Input,
+  Row,
+  Select,
+  TimePicker,
+} from "antd";
+import {
+  BookOutlined,
   DownloadOutlined,
   PlusOutlined,
   UploadOutlined,
@@ -66,14 +76,14 @@ const onChange = (pagination, filters, sorter, extra) => {
   console.log("params", pagination, filters, sorter, extra);
 };
 const AdminExamPage = () => {
-  const [StudentOpen, setStudentOpen] = useState(false);
+  const [examOpen, setExamOpen] = useState(false);
   return (
     <>
       <TabbleComponent columns={columns} data={data} onChange={onChange} />
       <FloatButtonGroup>
         <FloatButton
-          onClick={() => setStudentOpen(true)}
-          icon={<PlusOutlined />}
+          onClick={() => setExamOpen(true)}
+          icon={<BookOutlined />}
           type="primary"
           shape="circle"
         />
@@ -91,9 +101,59 @@ const AdminExamPage = () => {
         />
       </FloatButtonGroup>
       <AddSchoolModal
-        open={StudentOpen}
-        setOpen={() => setStudentOpen(false)}
-      />
+        width={1000}
+        open={examOpen}
+        setOpen={() => setExamOpen(false)}
+      >
+        <Form name="trigger" layout="vertical" autoComplete="off">
+          <Row gutter={16}>
+            <Col md={12}>
+              <Form.Item label="Exam Name" required name="examName">
+                <Input placeholder="Enter Exam Name" />
+              </Form.Item>
+            </Col>
+
+            <Col md={12}>
+              <Form.Item label="School Name" required name="schoolName">
+                <Select allowClear placeholder="Select School Name">
+                  <Select.Option>D.P.S</Select.Option>
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col md={12}>
+              <Form.Item label="Select Subject" required name="module">
+                <Select allowClear placeholder="Select Subject">
+                  <Select.Option>Science</Select.Option>
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col md={12}>
+              <Form.Item label="Select Class" required name="class">
+                <Select allowClear placeholder="Select Class">
+                  <Select.Option>10</Select.Option>
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col md={12}>
+              <Form.Item label="Select Section" required name="section">
+                <Select allowClear placeholder="Select Section">
+                  <Select.Option>A</Select.Option>
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col md={12}>
+              <Form.Item label="Enter Exam Time" required name="section">
+                <DatePicker.RangePicker showTime style={{ width: "100%" }} />
+              </Form.Item>
+            </Col>
+            <Col md={24}>
+              <Form.Item label="Exam Description" required name="description">
+                <Input.TextArea cols={10} rows={5} />
+              </Form.Item>
+            </Col>
+          </Row>
+        </Form>
+      </AddSchoolModal>
     </>
   );
 };

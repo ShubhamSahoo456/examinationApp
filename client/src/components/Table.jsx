@@ -1,6 +1,6 @@
 import { Table } from "antd";
 
-const TabbleComponent = ({ columns, data, onChange }) => {
+const TabbleComponent = ({ columns, data = [], onChange }) => {
   return (
     <Table
       columns={columns}

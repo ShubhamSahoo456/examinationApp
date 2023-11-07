@@ -14,12 +14,11 @@ import {
   DownloadOutlined,
   UserAddOutlined,
   PlusOutlined,
-  UploadOutlined
+  UploadOutlined,
 } from "@ant-design/icons";
 import FloatButtonGroup from "../../components/FloatButtonGroup";
 import AddSchoolModal from "../../components/modals/AddSchoolModal";
 import { exportToExcel, uploadFromExcel } from "../../components/helper/helper";
-
 
 const { Option } = Select;
 
@@ -27,7 +26,6 @@ const formItemLayout = {
   labelCol: { span: 6 },
   wrapperCol: { span: 14 },
 };
-
 
 const columns = [
   {
@@ -39,13 +37,11 @@ const columns = [
     title: "Name",
     dataIndex: "name",
     width: "4%",
-
   },
   {
     title: "Gaurdian Name",
     dataIndex: "gaurdianName",
     width: "4%",
-
   },
   {
     title: "Age",
@@ -57,37 +53,31 @@ const columns = [
     title: "Admission No.",
     dataIndex: "admissionNo",
     width: "3%",
-
   },
   {
     title: "School",
     dataIndex: "school",
     width: "2%",
-
   },
   {
     title: "School Class",
     dataIndex: "schoolClass",
     width: "2%",
-
   },
   {
     title: "Section",
     dataIndex: "section",
     width: "2%",
-
   },
   {
     title: "Exam Key",
     dataIndex: "examKey",
     width: "3%",
-
   },
-
 ];
 const data = [
   {
-    id: "1",
+    key: "1",
     name: "John Brown",
     gaurdianName: "Bhola Pandit",
     age: 23,
@@ -96,10 +86,10 @@ const data = [
     school: "New York School",
     schoolClass: "X",
     section: "B",
-    examKey: "ahkhdi"
+    examKey: "ahkhdi",
   },
   {
-    id: "2",
+    key: "2",
     name: "John Brown",
     gaurdianName: "Bhola Pandit",
     age: 23,
@@ -108,10 +98,10 @@ const data = [
     school: "New York School",
     schoolClass: "X",
     section: "B",
-    examKey: "ahkhdi"
+    examKey: "ahkhdi",
   },
   {
-    id: "3",
+    key: "3",
     name: "John Brown",
     gaurdianName: "Bhola Pandit",
     age: 23,
@@ -120,10 +110,10 @@ const data = [
     school: "New York School",
     schoolClass: "X",
     section: "B",
-    examKey: "ahkhdi"
+    examKey: "ahkhdi",
   },
   {
-    id: "4",
+    key: "4",
     name: "John Brown",
     gaurdianName: "Bhola Pandit",
     age: 23,
@@ -132,7 +122,7 @@ const data = [
     school: "New York School",
     schoolClass: "X",
     section: "B",
-    examKey: "ahkhdi"
+    examKey: "ahkhdi",
   },
 ];
 const onChange = (pagination, filters, sorter, extra) => {
@@ -164,11 +154,7 @@ const AdminStudentPage = () => {
           onClick={() => exportToExcel(data)}
         />
       </FloatButtonGroup>
-      <AddSchoolModal
-        open={StudentOpen}
-        setOpen={() => setStudentOpen(false)}
-      >
-
+      <AddSchoolModal open={StudentOpen} setOpen={() => setStudentOpen(false)}>
         <Form name="trigger" layout="vertical" autoComplete="off">
           <Row gutter={16}>
             <Col md={12}>
@@ -224,15 +210,17 @@ const AdminStudentPage = () => {
             <Col md={8}>
               <Form.Item label="Contact Number" required name="contact">
                 <Space direction="vertical" size="middle">
-
                   <Space.Compact>
-                    <Input style={{ width: '20%' }} defaultValue="+91" disabled />
-                    <Input style={{ width: '80%' }} placeholder="88888888" />
+                    <Input
+                      style={{ width: "20%" }}
+                      defaultValue="+91"
+                      disabled
+                    />
+                    <Input style={{ width: "80%" }} placeholder="88888888" />
                   </Space.Compact>
                 </Space>
               </Form.Item>
             </Col>
-
           </Row>
         </Form>
       </AddSchoolModal>
