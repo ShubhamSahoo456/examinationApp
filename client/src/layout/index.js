@@ -1,10 +1,12 @@
 import React from "react";
 import AdminLayout from "./AdminLayout";
 import AuthLayout from "./AuthLayout";
+import StudentLayout from "./StudentLayout";
 
 const Layouts = {
   admin: AdminLayout,
   auth: AuthLayout,
+  student: StudentLayout,
 };
 
 const getLayout = () => {
@@ -12,8 +14,8 @@ const getLayout = () => {
     return "admin";
   } else if (window.location.pathname.startsWith("/auth")) {
     return "auth";
-  } else {
-    return "main";
+  } else if (window.location.pathname.startsWith("/student")) {
+    return "student";
   }
 };
 

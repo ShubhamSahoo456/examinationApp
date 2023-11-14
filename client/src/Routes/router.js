@@ -16,8 +16,15 @@ const AdminClassPage = lazy(() =>
   import("../pages/AdminClassPage/AdminClassPage")
 );
 const Login = lazy(() => import("../components/Login"));
+const ExamPreview = lazy(() =>
+  import("../pages/StudentPages/ExamPreviewPage/ExamPreview")
+);
+const ExamQuestions = lazy(() =>
+  import("../pages/StudentPages/ExamQuestionsPage/ExamQuestions")
+);
+const GenerateReport = lazy(() => import("../pages/Report/GenerateReport"));
 
-const routes = [
+export const adminRoutes = [
   {
     path: "/admin/school",
     exact: true,
@@ -50,4 +57,20 @@ const routes = [
   },
 ];
 
-export default routes;
+export const studentRoutes = [
+  {
+    path: "/student/exam/preview",
+    exact: true,
+    Component: ExamPreview,
+  },
+  {
+    path: "/student/exam/:examkey",
+    exact: true,
+    Component: ExamQuestions,
+  },
+  {
+    path: "/student/exam/report",
+    exact: true,
+    Component: GenerateReport,
+  },
+];

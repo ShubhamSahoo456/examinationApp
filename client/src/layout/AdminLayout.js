@@ -121,12 +121,13 @@ const AdminLayout = ({ children }) => {
             }}
           />
           MyndKare Career Assessment Platform
-          <Image
-            className="img_display"
-            width={100}
-            height={50}
-            src="https://www.myndkare.com/wp-content/uploads/2021/05/cropped-myndkare-logo-115x57.png"
-          />
+          <div className="admin_img">
+            <Image
+              width={100}
+              height={50}
+              src="https://www.myndkare.com/wp-content/uploads/2021/05/cropped-myndkare-logo-115x57.png"
+            />
+          </div>
         </Header>
         <Content
           style={{
