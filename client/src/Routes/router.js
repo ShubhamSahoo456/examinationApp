@@ -69,7 +69,7 @@ export const studentRoutes = [
     Component: ExamQuestions,
   },
   {
-    path: "/student/exam/report",
+    path: "/exam/report",
     exact: true,
     Component: GenerateReport,
   },

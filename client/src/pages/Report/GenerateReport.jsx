@@ -455,7 +455,7 @@ function GenerateReport() {
           </p>
         </div>
       </div>
-
+      <hr />
       {/* 6th Page */}
       <div>
         <ReportHeader certificationNo={CERTIFICATION_NO} />
