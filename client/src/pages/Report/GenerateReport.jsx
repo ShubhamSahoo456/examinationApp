@@ -1,7 +1,27 @@
 import { Col, Image, Row, Watermark } from "antd";
 import ReportHeader from "../../components/Header/ReportHeader";
+import Chart from "../../components/Chart";
 
 function GenerateReport() {
+  const DBDASCORELABEL = ["VA", "SA", "NA", "MA", "RA", "CL", "CA"];
+  const DBDADATA = [5, 5, 7, 5, 10, 4, 5];
+  const INTERESTSCORELABEL = [
+    "ADMINISTRATIVE",
+    "ENTERPRISING",
+    "DEFENSE",
+    "SPORTS",
+    "CREATIVE",
+    "PERFORMING",
+    "MEDICAL",
+    "TECHNICAL",
+    "EXPRESSIVE",
+    "COMPUTATIONAL",
+    "HUMANITARIAN",
+    "EDUCATION",
+    "NATURE",
+    "CLERICAL",
+  ];
+  const INTERESTSCOREDATA = [1, 3, 10, 10, 6, 1, 1, 7, 3, 10, 1, 1, 1, 3];
   const CERTIFICATION_NO = "UKAAB/QOBQX1269L";
   const STUDENTNAME = "Shirjeel Sharma";
   const TESTINGDATE = new Date();
@@ -221,8 +241,20 @@ function GenerateReport() {
             </b>
           </h5>
         </center>
-        <div>
-          <div>{/* DBDA SCORES GRAPH */}</div>
+        <div className="p-4">
+          <div>
+            <center>
+              <Row>
+                <Col md={18}></Col>
+                <Chart
+                  chartLabel={"DBDA SCORES"}
+                  chartlabelArray={DBDASCORELABEL}
+                  chartData={DBDADATA}
+                />
+              </Row>
+            </center>
+            <center>ABILITIES</center>
+          </div>
           <ul>
             <li className="listStyleNone">
               <b>
@@ -394,7 +426,18 @@ function GenerateReport() {
 
       <div>
         <ReportHeader certificationNo={CERTIFICATION_NO} />
-        <div>{/* INTEREST SCORES GRAPH */}</div>
+        {/* INTEREST SCORES GRAPH */}
+        <Row>
+          <Col md={18}>
+            <center>
+              <Chart
+                chartLabel={"INTEREST SCORES"}
+                chartlabelArray={INTERESTSCORELABEL}
+                chartData={INTERESTSCOREDATA}
+              />
+            </center>
+          </Col>
+        </Row>
         <div>
           <p>
             Your child is still in a stage where he/she is exploring various
@@ -416,11 +459,8 @@ function GenerateReport() {
       {/* 6th Page */}
       <div>
         <ReportHeader certificationNo={CERTIFICATION_NO} />
-        <Watermark>
-          height={30}
-          width={130}
-          zIndex={111}
-          image=""
+        <Watermark content="CONFIDENTIAL">
+          <div style={{ height: 500 }} />
         </Watermark>
       </div>
     </div>

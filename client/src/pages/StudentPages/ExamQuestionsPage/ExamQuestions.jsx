@@ -31,12 +31,7 @@ function ExamQuestions() {
           <Card className="h-100">
             <h3 className="font-weight-bold text-center">Questions</h3>
             <hr />
-            <Watermark
-              height={30}
-              width={130}
-              zIndex={111}
-              image="../../../../public/watermark.png"
-            >
+            <Watermark content="MYNDKARE EXAMS">
               <p className="pt-4 px-4">
                 1. {MBTIQuestion.questions[0].question}
               </p>
