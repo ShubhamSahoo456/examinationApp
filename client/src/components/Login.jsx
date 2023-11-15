@@ -1,47 +1,103 @@
 import React from "react";
-import { Col, Form, Input, Row, Image, Select } from "antd";
+import { Avatar, Space, Segmented } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 function Login() {
+  const handleUserSelection = () => {};
   return (
-    <section class="h-100 d-flex align-items-center justify-content-center">
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-md-9 col-lg-6 col-xl-5">
+    <section className="h-100 d-flex align-items-center justify-content-center">
+      <div className="container-fluid">
+        <center>
+          <h1 className="mb-0">
+            <b>MYNDKARE</b>
+          </h1>
+          <p>
+            <u>CAREER ASSESSMENT PLATFORM</u>
+          </p>
+          <Space direction="vertical">
+            <Segmented
+              onClick={() => handleUserSelection()}
+              options={[
+                {
+                  label: (
+                    <div
+                      style={{
+                        padding: 4,
+                      }}
+                    >
+                      <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
+                      <div>Admin</div>
+                    </div>
+                  ),
+                  value: "admin",
+                },
+                {
+                  label: (
+                    <div
+                      style={{
+                        padding: 4,
+                      }}
+                    >
+                      <Avatar src="https://img.icons8.com/?size=512&id=17605&format=png"></Avatar>
+                      <div>Institution</div>
+                    </div>
+                  ),
+                  value: "institution",
+                },
+                {
+                  label: (
+                    <div
+                      style={{
+                        padding: 4,
+                      }}
+                    >
+                      <Avatar src="	https://img.icons8.com/?size=512&id=23319&format=png" />
+                      <div>Student</div>
+                    </div>
+                  ),
+                  value: "student",
+                },
+              ]}
+            />
+          </Space>
+        </center>
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-md-9 col-lg-6 col-xl-5">
             <img
               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-              class="img-fluid"
+              className="img-fluid"
               alt="Sample image"
             />
           </div>
-          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <form>
-              <div class="form-outline mb-4">
-                <label class="form-label" for="username">
+              <div className="form-outline mb-4">
+                <label className="form-label" htmlFor="username">
                   Username
                 </label>
                 <input
                   type="text"
                   id="username"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter Username"
                 />
               </div>
 
-              <div class="form-outline mb-3">
-                <label class="form-label" for="password">
+              <div className="form-outline mb-3">
+                <label className="form-label" htmlFor="password">
                   Password
                 </label>
                 <input
                   type="password"
                   id="password"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Enter password"
                 />
               </div>
-              <div class="text-center text-lg-start mt-4 pt-2">
+              <div className="text-center text-lg-start mt-4 pt-2">
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                   //   style="padding-left: 2.5rem; padding-right: 2.5rem;"
                 >
                   Login
