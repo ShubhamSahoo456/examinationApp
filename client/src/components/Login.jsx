@@ -1,111 +1,151 @@
-import React from "react";
-import { Avatar, Space, Segmented } from "antd";
+import React, { useEffect } from "react";
+import { Avatar, Space, Segmented, Form, Row, Col, Input, Button } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { login } from "../services/auth";
+import SubmitButton from "./Buttons/SubmitButton";
 
 function Login() {
-  const handleUserSelection = () => {};
+  useEffect(() => {
+    login({ email: "amit.kumar@gmail.com", password: "Bullet@500" });
+  }, []);
+
+  const handleUserSelection = (e) => {
+    console.log(e);
+  };
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
   return (
     <section className="h-100 d-flex align-items-center justify-content-center">
-      <div className="container-fluid">
-        <center>
-          <h1 className="mb-0">
-            <b>MYNDKARE</b>
-          </h1>
-          <p>
-            <u>CAREER ASSESSMENT PLATFORM</u>
-          </p>
-          <Space direction="vertical">
-            <Segmented
-              onClick={() => handleUserSelection()}
-              options={[
-                {
-                  label: (
-                    <div
-                      style={{
-                        padding: 4,
-                      }}
-                    >
-                      <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
-                      <div>Admin</div>
-                    </div>
-                  ),
-                  value: "admin",
-                },
-                {
-                  label: (
-                    <div
-                      style={{
-                        padding: 4,
-                      }}
-                    >
-                      <Avatar src="https://img.icons8.com/?size=512&id=17605&format=png"></Avatar>
-                      <div>Institution</div>
-                    </div>
-                  ),
-                  value: "institution",
-                },
-                {
-                  label: (
-                    <div
-                      style={{
-                        padding: 4,
-                      }}
-                    >
-                      <Avatar src="	https://img.icons8.com/?size=512&id=23319&format=png" />
-                      <div>Student</div>
-                    </div>
-                  ),
-                  value: "student",
-                },
-              ]}
-            />
-          </Space>
-        </center>
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-md-9 col-lg-6 col-xl-5">
+      <div className="container-fluid h-100">
+        <Row gutter={16} className="h-100">
+          <Col
+            md={12}
+            className="d-flex align-items-center justify-content-center"
+          >
             <img
               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               className="img-fluid"
               alt="Sample image"
             />
-          </div>
-          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <form>
-              <div className="form-outline mb-4">
-                <label className="form-label" htmlFor="username">
-                  Username
-                </label>
-                <input
-                  type="text"
-                  id="username"
-                  className="form-control"
-                  placeholder="Enter Username"
-                />
-              </div>
-
-              <div className="form-outline mb-3">
-                <label className="form-label" htmlFor="password">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  className="form-control"
-                  placeholder="Enter password"
-                />
-              </div>
-              <div className="text-center text-lg-start mt-4 pt-2">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  //   style="padding-left: 2.5rem; padding-right: 2.5rem;"
-                >
-                  Login
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+          </Col>
+          <Col md={12} className="d-flex justify-content-center flex-column">
+            <Row gutter={16}>
+              <Col md={24} className="d-flex align-items-center flex-column">
+                <h1 className="mb-0">
+                  <b>MYNDKARE</b>
+                </h1>
+                <p>
+                  <u>CAREER ASSESSMENT PLATFORM</u>
+                </p>
+              </Col>
+            </Row>
+            <Form
+              name="trigger"
+              onFinish={onFinish}
+              layout="vertical"
+              autoComplete="off"
+              initialValues={{ role: "student" }}
+            >
+              <Row>
+                <Col md={24} className="d-flex align-items-center flex-column">
+                  <Form.Item name="role">
+                    <Segmented
+                      onChange={handleUserSelection}
+                      defaultValue="student"
+                      name="role"
+                      options={[
+                        {
+                          label: (
+                            <div
+                              style={{
+                                padding: 4,
+                              }}
+                            >
+                              <Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
+                              <div>Admin</div>
+                            </div>
+                          ),
+                          value: "admin",
+                        },
+                        {
+                          label: (
+                            <div
+                              style={{
+                                padding: 4,
+                              }}
+                            >
+                              <Avatar src="https://img.icons8.com/?size=512&id=17605&format=png"></Avatar>
+                              <div>Institution</div>
+                            </div>
+                          ),
+                          value: "institution",
+                        },
+                        {
+                          label: (
+                            <div
+                              style={{
+                                padding: 4,
+                              }}
+                            >
+                              <Avatar src="	https://img.icons8.com/?size=512&id=23319&format=png" />
+                              <div>Student</div>
+                            </div>
+                          ),
+                          value: "student",
+                        },
+                      ]}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row className="d-flex justify-content-center">
+                <Col md={15} className="form-outline mt-3 ">
+                  <Form.Item
+                    label="Usernane"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your username!",
+                      },
+                    ]}
+                    name="userName"
+                  >
+                    <Input type="text" placeholder="Eneter Username" />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row className="d-flex justify-content-center">
+                <Col md={15} className="form-outline">
+                  <Form.Item
+                    label="Enter Password"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your password!",
+                      },
+                    ]}
+                    name="password"
+                  >
+                    <Input.Password placeholder="Enter Password" />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row className="d-flex justify-content-center">
+                <Col md={15}>
+                  <Button
+                    size="middle"
+                    type="primary"
+                    htmlType="submit"
+                    loading={false}
+                  >
+                    Login
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
+          </Col>
+        </Row>
       </div>
     </section>
   );

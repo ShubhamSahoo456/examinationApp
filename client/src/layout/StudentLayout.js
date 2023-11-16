@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  Avatar,
-  Breadcrumb,
-  Button,
-  Image,
-  Layout,
-  Menu,
-  Popover,
-  theme,
-} from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { Avatar, Image, Layout, Menu, Popover, theme } from "antd";
 const { Header, Content, Footer } = Layout;
 const StudentLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
