@@ -150,6 +150,72 @@
                     "correctAnswers": [],
                     "userSelectedAnswers": []
                 }
+            ],
+            "DBDI": [
+                {
+                    "questionGroupId": "",
+                    "type": "multiple-choice",
+                    "questionDescription": "ADD",
+                    "exampleQuestionDescription": "This test is made up of short number problems. Each problem is followed by five choices. You are to choose the correct answer and select it. Work as quickly and accurately as you can. Two examples follow.",
+                    "questionExample": "Example X",
+                    "options": [
+                        {
+                            "A": [
+                                231
+                            ],
+                            "B": [
+                                241
+                            ],
+                            "C": [
+                                153
+                            ],
+                            "D": [
+                                261
+                            ],
+                            "E": [
+                                243
+                            ]
+                        }
+                    ],
+                    "isRequired": false,
+                    "maxAnswers": 1,
+                    "correctAnswers": [
+                        "B"
+                    ],
+                    "userSelectedAnswers": []
+                },
+                {
+                    "questionGroupId": "",
+                    "type": "multiple-choice",
+                    "questionDescription": "",
+                    "exampleQuestionDescription": "This test is made up of short number problems. Each problem is followed by five choices. You are to choose the correct answer and select it. Work as quickly and accurately as you can. Two examples follow.",
+                    "questionExample": "Example Y",
+                    "options": [
+                        {
+                            "A": [
+                                "path1"
+                            ],
+                            "B": [
+                                "path2"
+                            ],
+                            "C": [
+                                "path3"
+                            ],
+                            "D": [
+                                "path4"
+                            ],
+                            "E": [
+                                "path5"
+                            ]
+                        }
+                    ],
+                    "isRequired": false,
+                    "maxAnswers": 1,
+                    "correctAnswers": [
+                        "C"
+                    ],
+                    "userSelectedAnswers": []
+                }
             ]
         }
     ]
