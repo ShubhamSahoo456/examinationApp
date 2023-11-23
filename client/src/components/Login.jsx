@@ -5,10 +5,6 @@ import { login } from "../services/auth";
 import SubmitButton from "./Buttons/SubmitButton";
 
 function Login() {
-  useEffect(() => {
-    login({ email: "amit.kumar@gmail.com", password: "Bullet@500" });
-  }, []);
-
   const handleUserSelection = (e) => {
     console.log(e);
   };
@@ -79,7 +75,7 @@ function Login() {
                               <div>Institution</div>
                             </div>
                           ),
-                          value: "institution",
+                          value: "subAdmin",
                         },
                         {
                           label: (

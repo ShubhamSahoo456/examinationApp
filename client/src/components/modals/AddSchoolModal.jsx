@@ -13,9 +13,9 @@ const AddSchoolModal = ({
         title={title}
         centered
         open={open}
-        onOk={() => setOpen(false)}
-        onCancel={() => setOpen(false)}
+        footer={false}
         width={width}
+        onCancel={() => setOpen(false)}
       >
         {children}
       </Modal>

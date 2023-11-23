@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TabbleComponent from "../../components/Table";
 import {
+  Button,
   Col,
   FloatButton,
   Form,
@@ -20,6 +21,9 @@ import {
 } from "@ant-design/icons";
 import AddSchoolModal from "../../components/modals/AddSchoolModal";
 import { exportToExcel, uploadFromExcel } from "../../components/helper/helper";
+import { useDispatch } from "react-redux";
+import { registerSchool } from "../../actions/userActions";
+import { SET_TOAST_STATE } from "../../constants/constants";
 
 const columns = [
   {
@@ -101,6 +105,42 @@ const onChange = (pagination, filters, sorter, extra) => {
 };
 const AdminSchoolPage = () => {
   const [SchoolOpen, setSchoolOpen] = useState(false);
+  const dispatch = useDispatch();
+  const [form] = Form.useForm();
+
+  const onFinish = async (values) => {
+    try {
+      if (values.password === values.confirmPassword) {
+        delete values.confirmPassword;
+        await dispatch(registerSchool(values));
+        form.resetFields();
+        setSchoolOpen(false);
+      } else {
+        dispatch({
+          type: SET_TOAST_STATE,
+          payload: {
+            showToast: true,
+            message: "Password does not match",
+            toastType: "error",
+          },
+        });
+      }
+    } catch (error) {
+      dispatch({
+        type: SET_TOAST_STATE,
+        payload: {
+          showToast: true,
+          message: error,
+          toastType: "error",
+        },
+      });
+    }
+  };
+
+  const cancelSchoolRegister = () => {
+    form.resetFields();
+    setSchoolOpen(false);
+  };
 
   const uploadButton = (
     <div>
@@ -141,7 +181,14 @@ const AdminSchoolPage = () => {
         />
       </FloatButton.Group>
       <AddSchoolModal open={SchoolOpen} setOpen={() => setSchoolOpen(false)}>
-        <Form name="trigger" layout="vertical" autoComplete="off">
+        <Form
+          name="trigger"
+          layout="vertical"
+          autoComplete="off"
+          onFinish={onFinish}
+          initialValues={{ role: "subAdmin" }}
+          form={form}
+        >
           <Row gutter={16}>
             <Col md={8}>
               <Form.Item label="School Name" required name="schoolName">
@@ -151,19 +198,18 @@ const AdminSchoolPage = () => {
             <Col md={8}>
               <Form.Item label="Select School Type" required name="schoolType">
                 <Select allowClear placeholder="Select School Type">
-                  <Select.Option>Government</Select.Option>
-                  <Select.Option>Private</Select.Option>
-                  <Select.Option>Others</Select.Option>
+                  <Select.Option value="government">Government</Select.Option>
+                  <Select.Option value="private">Private</Select.Option>
                 </Select>
               </Form.Item>
             </Col>
             <Col md={8}>
-              <Form.Item label="Contact Number" required name="contact">
+              <Form.Item label="Contact Number" required name="contactNumber">
                 <Input max={10} addonBefore="+91" />
               </Form.Item>
             </Col>
             <Col md={8}>
-              <Form.Item label="School Website" required name="schoolWebsite">
+              <Form.Item label="School Website" required name="website">
                 <Input addonBefore="https://" />
               </Form.Item>
             </Col>
@@ -173,16 +219,12 @@ const AdminSchoolPage = () => {
               </Form.Item>
             </Col>
             <Col md={8}>
-              <Form.Item
-                label="School Email Address"
-                required
-                name="schoolEmail"
-              >
+              <Form.Item label="School Email Address" required name="email">
                 <Input placeholder="Enter School Email" />
               </Form.Item>
             </Col>
             <Col md={12}>
-              <Form.Item label="Enter Full Address" name="schoolAddress">
+              <Form.Item label="Enter Full Address" name="address">
                 <Input.TextArea
                   showCount
                   maxLength={100}
@@ -194,7 +236,7 @@ const AdminSchoolPage = () => {
               md={12}
               className="d-flex align-items-center justify-content-center"
             >
-              <Form.Item name="schoolLogo" label="Upload Logo">
+              <Form.Item name="logo" label="Upload Logo">
                 <Upload
                   name="avatar"
                   listType="picture-card"
@@ -226,6 +268,22 @@ const AdminSchoolPage = () => {
               >
                 <Input placeholder="Enter Confirm Password" type="password" />
               </Form.Item>
+            </Col>
+            <Col md={8} className="d-none">
+              <Form.Item label="Role" name="role">
+                <Input disabled type="password" value="subAdmin" />
+              </Form.Item>
+            </Col>
+            <Col md={24}>
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+              <Button
+                className="bg-danger text-white mx-2"
+                onClick={cancelSchoolRegister}
+              >
+                Cancel
+              </Button>
             </Col>
           </Row>
         </Form>

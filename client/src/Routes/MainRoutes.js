@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "../layout";
 import { adminRoutes, studentRoutes } from "./router";
-
 const MainRoutes = () => {
   return (
     <>
