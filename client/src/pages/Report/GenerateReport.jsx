@@ -1,8 +1,17 @@
 import { Col, Image, Row, Watermark } from "antd";
 import ReportHeader from "../../components/Header/ReportHeader";
-import Chart from "../../components/Chart";
+// import Chart from "../../components/Chart";
+import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+
+import MBTIReportGeneration from "../StudentPages/ExamQuestionsPage/MBTIReportGeneration.json";
 
 function GenerateReport() {
+  const { userInfo } = useSelector((state) => state.userLogin);
+  const { answers } = useSelector((state) => state.answerReducer);
+  const answersOptionArray = answers.map((ans) => ans.value);
+  const [MBTIReportDetails, setMBTIReportDetails] = useState({});
+  const mbtiReport = JSON.parse(JSON.stringify(MBTIReportGeneration.MBTI));
   const DBDASCORELABEL = ["VA", "SA", "NA", "MA", "RA", "CL", "CA"];
   const DBDADATA = [5, 5, 7, 5, 10, 4, 5];
   const INTERESTSCORELABEL = [
@@ -23,10 +32,25 @@ function GenerateReport() {
   ];
   const INTERESTSCOREDATA = [1, 3, 10, 10, 6, 1, 1, 7, 3, 10, 1, 1, 1, 3];
   const CERTIFICATION_NO = "UKAAB/QOBQX1269L";
-  const STUDENTNAME = "Shirjeel Sharma";
+  const STUDENTNAME = userInfo?.userObj?.fullName;
   const TESTINGDATE = new Date();
-  const CLASS = "X";
+  const CLASS = userInfo?.userObj?.classId;
   const GENDER = "Male";
+
+  const checkPersonalityTraits = () => {
+    const ans = mbtiReport.find((ele) => {
+      return ele.userSelectedAnswers.every(
+        (val, index) => val === answersOptionArray[index]
+      );
+    });
+    // console.log(ans?.personalityTraits["Your Personality Traits"][0]);
+    setMBTIReportDetails(ans);
+  };
+
+  useEffect(() => {
+    checkPersonalityTraits();
+    console.log(MBTIReportDetails);
+  }, []);
 
   return (
     <div className="container">
@@ -89,7 +113,7 @@ function GenerateReport() {
             <b>Personality Type:</b>
           </h5>
           <h5 className="py-2">
-            <b>ESFJ (Extraverted, Sensing, Feeling, Judging)</b>
+            <b>{MBTIReportDetails?.personalityType?.Your_Personality_Type}</b>
           </h5>
           <ul>
             <li className="py-2">
@@ -98,42 +122,29 @@ function GenerateReport() {
               </h6>
             </li>
             <ul>
-              <li className="py-2">Organized</li>
-              <li className="py-2">Loyal</li>
-              <li className="py-2">Dependable</li>
-              <li className="py-2">
-                Enjoy creating order, structure and schedules
-              </li>
-              <li className="py-2">Enjoy interacting with people</li>
-              <li className="py-2">Warm-hearted and sympathetic</li>
-              <li className="py-2">Tend to put others needs above your own</li>
-              <li className="py-2">Very good at giving practical care</li>
-              <li className="py-2">Very cooperative, good team members</li>
-              <li className="py-2">Practical and down-to earth</li>
-              <li className="py-2">Value peaceful living and security</li>
-              <li className="py-2">
-                Enjoy variety, but work well with routine tasks
-              </li>
-              <li className="py-2">Will seek approval from others</li>
-              <li className="py-2">
-                Receive satisfaction from giving to others
-              </li>
-              <li className="py-2">Live in the present</li>
+              {MBTIReportDetails?.personalityTraits?.Your_Personality_Traits.map(
+                (traits, index) => (
+                  <li key={index} className="py-2">
+                    {traits}
+                  </li>
+                )
+              )}
             </ul>
           </ul>
-
+          Comments
           <p className="py-3">
-            You will do well at tasks which involve creating or maintaining
+            {MBTIReportDetails?.comments}
+            {/* You will do well at tasks which involve creating or maintaining
             order to structure, and will be happiest when you are serving others
             You will be at your best by organizing people in getting a job done.
             You know it's important to give as well as receive and will like to
-            donate your services as a volunteer.
+            donate your services as a volunteer. */}
           </p>
           <hr />
         </div>
       </div>
       {/* 2nd Page */}
-      <div>
+      {/* <div>
         <ReportHeader certificationNo={CERTIFICATION_NO} />
         <center>
           <h5>
@@ -230,9 +241,9 @@ function GenerateReport() {
           </table>
         </div>
         <hr />
-      </div>
+      </div> */}
       {/* 3rd Page */}
-      <div>
+      {/* <div>
         <ReportHeader certificationNo={CERTIFICATION_NO} />
         <center>
           <h5>
@@ -309,10 +320,10 @@ function GenerateReport() {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
       {/* 4th Page */}
 
-      <div>
+      {/* <div>
         <ReportHeader certificationNo={CERTIFICATION_NO} />
         <center>
           <h5>
@@ -420,13 +431,12 @@ function GenerateReport() {
           </table>
         </div>
       </div>
-      <hr />
+      <hr /> */}
 
       {/* 5th Page */}
 
-      <div>
+      {/* <div>
         <ReportHeader certificationNo={CERTIFICATION_NO} />
-        {/* INTEREST SCORES GRAPH */}
         <Row>
           <Col md={18}>
             <center>
@@ -455,7 +465,7 @@ function GenerateReport() {
           </p>
         </div>
       </div>
-      <hr />
+      <hr /> */}
       {/* 6th Page */}
       <div>
         <ReportHeader certificationNo={CERTIFICATION_NO} />

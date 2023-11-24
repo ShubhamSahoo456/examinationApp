@@ -9,14 +9,14 @@
                 1
             ],
             "personalityType": {
-                "Your Personality Type :": "ESTJ (Extraverted, Sensing, Thinking, Judging)"
+                "Your_Personality_Type": "ESTJ (Extraverted, Sensing, Thinking, Judging)"
             },
             "comments": [
                 "You value team sports, and other group activities. You learn best in structured settings and will deliver when there's a specific task with deadlines.",
                 "You are flexible in the type of careers you would choose and will be the happiest in leadership positions."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "A Natural Leader and like to be in charge",
                     "Traditional and Value security",
                     "Loyal",
@@ -36,11 +36,11 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type : ": "ESTP (Extraverted,Sensing,Thinking,Perceiving)"
+                "Your_Personality_Type": "ESTP (Extraverted,Sensing,Thinking,Perceiving)"
             },
             "comments": [],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Project-oriented",
                     "Bright and capable",
                     "Organized",
@@ -68,13 +68,13 @@
                 1
             ],
             "personalityType": {
-                "Your Personality Type :": "ESFJ (Extraverted, Sensing, Feeling, Judging)"
+                "Your_Personality_Type": "ESFJ (Extraverted, Sensing, Feeling, Judging)"
             },
             "comments": [
                 "You will do well at tasks which involve creating or maintaining order and structure, and will be happiest when you are serving others. You will be at your best by organizing people in getting a job done. You know it's important to give as well as receive and will like to donate your services as a volunteer."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Organized",
                     "Loyal",
                     "Dependable",
@@ -102,13 +102,13 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type :": "ESFP (Extraverted, Sensing, Feeling,Perceiving)"
+                "Your_Personality_Type": "ESFP (Extraverted, Sensing, Feeling,Perceiving)"
             },
             "comments": [
                 "You are good at many things, but will not be happy unless you have a lot of contact with people, and a lot of new experiences. You like teamwork but could get caught up in others' emotions and allow others to participate in the decisions."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Live in the present",
                     "Are stimulated and excited by new experiences",
                     "Practical and realistic",
@@ -133,13 +133,13 @@
                 1
             ],
             "personalityType": {
-                "Your Personality Type :": "ENTJ (Extraverted, Intuitive, Thinking, Judging)"
+                "Your_Personality_Type": "ENTJ (Extraverted, Intuitive, Thinking, Judging)"
             },
             "comments": [
                 "You are well-suited to be leaders and organization builders and have the ability to clearly identify problems and innovative solutions for the short and long-term well-being of an organization."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Driven to turn theories into plans",
                     "Highly value knowledge",
                     "Future-oriented",
@@ -162,13 +162,13 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type :": "ENTP (Extraverted, Intuitive, Thinking,Perceiving)"
+                "Your_Personality_Type": "ENTP (Extraverted, Intuitive, Thinking,Perceiving)"
             },
             "comments": [
                 "You will do well to choose professions which allow a lot of personal freedom and creativity to generate new ideas. You will not be completely happy in positions which are regimented or confining."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Enjoy generating ideas and theories",
                     "Excellent communication skills",
                     "Enjoy debating issues with other people",
@@ -195,13 +195,13 @@
                 1
             ],
             "personalityType": {
-                "Your Personality Type :": "ENFJ (Extraverted, Intuitive, Feeling, Judging)"
+                "Your_Personality_Type": "ENFJ (Extraverted, Intuitive, Feeling, Judging)"
             },
             "comments": [
                 "The flexibility of these characteristics will provide you the levy in choosing a profession. As long as the environment is supportive, you should do very well."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Genuinely and warmly interested in people",
                     "Value people's feelings",
                     "Value structure and organization",
@@ -227,13 +227,13 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type :": "ENFP (Extraverted, Intuitive, Feeling,Perceiving)"
+                "Your_Personality_Type": "ENFP (Extraverted, Intuitive, Feeling,Perceiving)"
             },
             "comments": [
                 "You could generally achieve a good degree of success at anything. However, you may get bored rather easily and are not naturally good at following things through to completion. Accordingly, you should avoid jobs which require performing a lot of detailed, routine-oriented tasks."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     " Project-oriented",
                     "Bright and capable",
                     "Warmly, genuinely interested in people; great people skills",
@@ -262,11 +262,11 @@
                 1
             ],
             "personalityType": {
-                "Your Personality Type :": "ISTJ (Introverted, Sensing, Thinking, Judging)"
+                "Your_Personality_Type": "ISTJ (Introverted, Sensing, Thinking, Judging)"
             },
             "comments": [],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Value tradition, security, and peaceful living",
                     "Work long and hard to fulfill duties",
                     "Dependable",
@@ -296,13 +296,13 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type :": "ISTP (Introverted, Sensing, Thinking,Perceiving): The Mechanics"
+                "Your_Personality_Type": "ISTP (Introverted, Sensing, Thinking,Perceiving): The Mechanics"
             },
             "comments": [
                 "You could generally achieve a good degree of success at anything. However, you may get bored rather easily and are not naturally good at following things through to completion. Accordingly, you should avoid jobs which require performing a lot of detailed, routine-oriented tasks."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Interested in how and why things work",
                     "Do not function well in regimented, structured environments.",
                     "Constantly gather facts about your environment and store them away",
@@ -329,11 +329,11 @@
                 1
             ],
             "personalityType": {
-                "Your Personality Type :": "ISFJ (Introverted, Sensing, Feeling, Judging)"
+                "Your_Personality_Type": "ISFJ (Introverted, Sensing, Feeling, Judging)"
             },
             "comments": [],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Large, rich inner store of information about people",
                     "Highly observant and aware of people's feelings and reactions",
                     "Excellent memory for details",
@@ -360,11 +360,11 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type :": "ISFP (Introverted, Sensing, Feeling, Perceiving)"
+                "Your_Personality_Type": "ISFP (Introverted, Sensing, Feeling, Perceiving)"
             },
             "comments": [],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Keen awareness of your environment",
                     "Live in the present",
                     "Enjoy a slower pace",
@@ -394,11 +394,11 @@
                 1
             ],
             "personalityType": {
-                "Your Personality Type :": "INTJ (Introverted, Intuitive, Thinking, Judging)"
+                "Your_Personality_Type": "INTJ (Introverted, Intuitive, Thinking, Judging)"
             },
             "comments": [],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Able to absorb extremely complex theoretical and complex material",
                     "Driven to create order and structure from theoretical abstractions",
                     "Supreme strategists",
@@ -431,13 +431,13 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type :": "INTP (Introverted, Intuitive, Thinking, Perceiving)"
+                "Your_Personality_Type": "INTP (Introverted, Intuitive, Thinking, Perceiving)"
             },
             "comments": [
                 "You have a great deal of insight and are creative thinkers, which allow a quick grasp over complex abstract thoughts. You will be happiest in careers which allow a great deal of autonomy."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     " Love theory and abstract ideas",
                     "Truth Seekers - understand things by analyzing underlying principles and structures",
                     "Value knowledge and competence",
@@ -464,13 +464,13 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type :": "INFJ (Introverted, Intuitive, Feeling, Judging)"
+                "Your_Personality_Type": "INFJ (Introverted, Intuitive, Feeling, Judging)"
             },
             "comments": [
                 "You are a special individual who needs more out of a career than a job. Since you have strong value systems, and persistent intuitive visions which lend a sense of 'knowing', you would do best in positions of leadership, rather than followers."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "Keen awareness of your environment",
                     "Live in the present",
                     "Enjoy a slower pace",
@@ -500,14 +500,14 @@
                 2
             ],
             "personalityType": {
-                "Your Personality Type :": "ISFP (Introverted, Sensing, Feeling, Perceiving)"
+                "Your_Personality_Type": "ISFP (Introverted, Sensing, Feeling, Perceiving)"
             },
             "comments": [
                 "You value team sports, and other group activities. You learn best in structured settings and will deliver when there's a specific task with deadlines.",
                 "You are flexible in the type of careers you would choose and will be the happiest in leadership positions. You will be best suited for jobs which require creating order and structure."
             ],
             "personalityTraits": {
-                "Your Personality Traits :": [
+                "Your_Personality_Traits": [
                     "A Natural Leader and like to be in charge",
                     "Traditional and Value security",
                     "Loyal",

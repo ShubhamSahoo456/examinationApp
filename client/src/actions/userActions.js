@@ -55,3 +55,22 @@ export const loginUser = (body) => async (dispatch) => {
     }
   });
 };
+
+export const getAllSchoolsAction = () => (dispatch) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const { data } = await axios.get("/getAllSchools");
+      resolve(data.schools);
+    } catch (error) {
+      dispatch({
+        type: SET_TOAST_STATE,
+        payload: {
+          showToast: true,
+          message: error?.response?.data?.message || error.message,
+          toastType: "error",
+        },
+      });
+      reject(error?.response?.data?.message || error.message);
+    }
+  });
+};

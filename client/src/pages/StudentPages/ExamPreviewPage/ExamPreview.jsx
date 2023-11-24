@@ -1,9 +1,18 @@
 import React from "react";
 import { Button, Col, Collapse, Row } from "antd";
 import { useNavigate, usenavigate } from "react-router-dom";
+import { DownloadOutlined, FundViewOutlined } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
 
 const ExamPreview = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const downloadReport = () => {
+    // console.log(navigate);
+  };
+  const viewReport = () => {
+    navigate("/exam/report");
+  };
   const items = [
     {
       key: "1",
@@ -59,6 +68,24 @@ const ExamPreview = () => {
               />
             </Col>
           ))}
+          {/* <Button
+            className="mx-5"
+            type="primary"
+            icon={<DownloadOutlined />}
+            size="large"
+            onClick={() => downloadReport()}
+          >
+            Report
+          </Button> */}
+          <Button
+            className="mx-5"
+            type="primary"
+            icon={<FundViewOutlined />}
+            size="large"
+            onClick={() => viewReport()}
+          >
+            View Report
+          </Button>
         </Row>
       </div>
     </>

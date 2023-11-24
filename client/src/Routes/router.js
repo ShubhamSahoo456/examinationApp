@@ -68,6 +68,9 @@ export const studentRoutes = [
     exact: true,
     Component: ExamQuestions,
   },
+];
+
+export const examReport = [
   {
     path: "/exam/report",
     exact: true,

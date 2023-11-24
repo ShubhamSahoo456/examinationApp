@@ -17,7 +17,7 @@ function Login() {
       const { data } = await dispatch(loginUser(values));
 
       console.log(data);
-      if (data.userObj.role === "student") {
+      if (data?.userObj?.role === "student") {
         navigate("/student/exam/preview");
       }
     } catch (error) {

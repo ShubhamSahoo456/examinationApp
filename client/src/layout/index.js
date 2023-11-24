@@ -19,6 +19,7 @@ const getLayout = () => {
   } else if (window.location.pathname.startsWith("/student")) {
     return "student";
   } else {
+    console.log("reached");
     return "main";
   }
 };

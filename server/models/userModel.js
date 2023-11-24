@@ -27,12 +27,23 @@ const studentSchema = new Schema(
     dob: {
       type: Date,
     },
+    gender: {
+      type: String,
+    },
+    // classId: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "class",
+    // },
+    // sectionId: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "section",
+    // },
     classId: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "class",
     },
     sectionId: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "section",
     },
     password: {

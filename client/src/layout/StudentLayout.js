@@ -1,33 +1,57 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Avatar, Image, Layout, Menu, Popover, theme } from "antd";
+import { LogoutOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 const { Header, Content, Footer } = Layout;
 const StudentLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
   const { userInfo } = useSelector((state) => state.userLogin);
+  const navigate = useNavigate();
 
-  const hide = () => {
+  const handleLogout = () => {
     setOpen(false);
+    localStorage.clear();
+    navigate("/auth/login");
   };
-
   const handleOpenChange = (newOpen) => {
     setOpen(newOpen);
   };
-
-  const Title = userInfo.userObj.fullName;
+  const originalDate = new Date(userInfo?.userObj?.dob);
+  const dobFormat = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(originalDate);
+  const Title = userInfo?.userObj?.fullName;
   const content = (
     <div>
       <p className="m-0">
-        <b>Roll No:</b>
-        {userInfo.userObj.admissionNumber}
+        <b>Roll No: </b>
+        {userInfo?.userObj?.admissionNumber}
       </p>
       <p className="m-0">
-        <b>Father's Name:</b>
-        {userInfo.userObj.fathersName}
+        <b>DOB: </b>
+        {dobFormat}
       </p>
-      <a className="m-0" onClick={hide}>
-        Close
-      </a>
+      <p className="m-0">
+        <b>Father's Name: </b>
+        {userInfo?.userObj?.fathersName}
+      </p>
+      <p className="m-0">
+        <b>Contact No: </b>
+        {userInfo?.userObj?.contactNumber}
+      </p>
+      <p className="m-0">
+        <b>School Name: </b>
+        {userInfo?.userObj?.schoolName}
+      </p>
+      <center>
+        <a className="btn btn-primary my-2" onClick={() => handleLogout()}>
+          Logout &nbsp;
+          <LogoutOutlined />
+        </a>
+      </center>
     </div>
   );
   const {
@@ -56,8 +80,11 @@ const StudentLayout = ({ children }) => {
             open={open}
             onOpenChange={handleOpenChange}
           >
-            <Avatar style={{ backgroundColor: "#87d068" }} size={40}>
-              {userInfo.userObj.fullName.split(" ")[0][0]}
+            <Avatar
+              style={{ backgroundColor: "#fde3cf", color: "#f56a00" }}
+              size={40}
+            >
+              {userInfo?.userObj?.fullName.split(" ")[0][0]}
             </Avatar>
             <span className="text-white mx-2">{Title}</span>
           </Popover>

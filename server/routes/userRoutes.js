@@ -1,6 +1,10 @@
 const { API_VERSION } = require("../config");
 const { validationRequest } = require("../middleware/auth");
-const { getLoggedInUser, createUser } = require("../services/userServices");
+const {
+  getLoggedInUser,
+  createUser,
+  getAllchools,
+} = require("../services/userServices");
 const { auth } = require("../validation/userValidation");
 
 module.exports = (app) => {
@@ -31,4 +35,14 @@ module.exports = (app) => {
       }
     }
   );
+
+  app.get(`${API_VERSION}/getAllSchools`, async (req, res) => {
+    try {
+      const schools = await getAllchools();
+      res.status(200).json(schools);
+    } catch (error) {
+      console.log(error);
+      return res.status(error.status || 500).json(error);
+    }
+  });
 };

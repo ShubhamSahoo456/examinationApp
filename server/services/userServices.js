@@ -1,5 +1,9 @@
 const CustomError = require("../utils/customError");
-const { getUserInstance, createUserInstance } = require("../dao/userDao");
+const {
+  getUserInstance,
+  createUserInstance,
+  getSchoolsInstances,
+} = require("../dao/userDao");
 const {
   createJWT,
   comparePasswordHash,
@@ -63,7 +67,21 @@ const createUser = async (body) => {
   }
 };
 
+const getAllchools = async () => {
+  try {
+    const scholInstances = await getSchoolsInstances({ role: "subAdmin" });
+    return {
+      message: "Schools fetched successfully",
+      schools: scholInstances,
+    };
+  } catch (error) {
+    console.log(error);
+    throw new CustomError(500, error.message);
+  }
+};
+
 module.exports = {
   getLoggedInUser,
   createUser,
+  getAllchools,
 };

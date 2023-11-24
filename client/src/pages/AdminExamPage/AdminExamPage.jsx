@@ -108,12 +108,6 @@ const AdminExamPage = () => {
         <Form name="trigger" layout="vertical" autoComplete="off">
           <Row gutter={16}>
             <Col md={12}>
-              <Form.Item label="Exam Name" required name="examName">
-                <Input placeholder="Enter Exam Name" />
-              </Form.Item>
-            </Col>
-
-            <Col md={12}>
               <Form.Item label="School Name" required name="schoolName">
                 <Select allowClear placeholder="Select School Name">
                   <Select.Option>D.P.S</Select.Option>
@@ -142,8 +136,8 @@ const AdminExamPage = () => {
               </Form.Item>
             </Col>
             <Col md={12}>
-              <Form.Item label="Enter Exam Time" required name="section">
-                <DatePicker.RangePicker showTime style={{ width: "100%" }} />
+              <Form.Item label="Enter Exam Duration" required name="duration">
+                <TimePicker style={{ width: "100%" }} showNow={false} />
               </Form.Item>
             </Col>
             <Col md={24}>
