@@ -25,6 +25,12 @@ const AdminLayout = ({ children }) => {
     token: { colorBgContainer },
   } = theme.useToken();
 
+  const navigate = useNavigate();
+  const logout = () => {
+    console.log("clicked");
+    localStorage.removeItem("token");
+    navigate("/auth/login");
+  };
   return (
     <Layout>
       <Sider
@@ -93,6 +99,9 @@ const AdminLayout = ({ children }) => {
                   key: "logout",
                   icon: <LogoutOutlined />,
                   label: "Logout",
+                  onClick: () => {
+                    logout();
+                  },
                 },
                 {
                   key: "profile",

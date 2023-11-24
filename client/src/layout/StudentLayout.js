@@ -3,11 +3,12 @@ import { useSelector } from "react-redux";
 import { Avatar, Image, Layout, Menu, Popover, theme } from "antd";
 import { LogoutOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { FEMALE_AVATAR_ICON, MALE_AVATAR_ICON } from "../constants/constants";
 const { Header, Content, Footer } = Layout;
 const StudentLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
-  const { userInfo } = useSelector((state) => state.userLogin);
   const navigate = useNavigate();
+  const { userInfo } = useSelector((state) => state.userLogin);
 
   const handleLogout = () => {
     setOpen(false);
@@ -17,12 +18,12 @@ const StudentLayout = ({ children }) => {
   const handleOpenChange = (newOpen) => {
     setOpen(newOpen);
   };
-  const originalDate = new Date(userInfo?.userObj?.dob);
-  const dobFormat = new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(originalDate);
+  // const originalDate = new Date(userInfo?.userObj?.dob);
+  // const dobFormat = new Intl.DateTimeFormat("en-US", {
+  //   year: "numeric",
+  //   month: "2-digit",
+  //   day: "2-digit",
+  // }).format(originalDate);
   const Title = userInfo?.userObj?.fullName;
   const content = (
     <div>
@@ -32,7 +33,7 @@ const StudentLayout = ({ children }) => {
       </p>
       <p className="m-0">
         <b>DOB: </b>
-        {dobFormat}
+        23rd Oct 1998
       </p>
       <p className="m-0">
         <b>Father's Name: </b>
@@ -81,10 +82,13 @@ const StudentLayout = ({ children }) => {
             onOpenChange={handleOpenChange}
           >
             <Avatar
-              style={{ backgroundColor: "#fde3cf", color: "#f56a00" }}
-              size={40}
+              src={
+                userInfo.role == "student" && userInfo.gender == "female"
+                  ? FEMALE_AVATAR_ICON
+                  : MALE_AVATAR_ICON
+              }
             >
-              {userInfo?.userObj?.fullName.split(" ")[0][0]}
+              {/* {userInfo?.userObj?.fullName.split(" ")[0][0]} */}
             </Avatar>
             <span className="text-white mx-2">{Title}</span>
           </Popover>

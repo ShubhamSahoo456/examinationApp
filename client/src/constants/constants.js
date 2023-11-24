@@ -11,3 +11,7 @@ export const USER_REGISTER_FAIL = "USER_REGISTER_FAIL";
 
 export const SET_TOAST_STATE = "SET_TOAST_STATE";
 export const RESET_TOAST_STATE = "RESET_TOAST_STATE";
+export const FEMALE_AVATAR_ICON =
+  "https://xsgames.co/randomusers/assets/avatars/pixel/42.jpg";
+export const MALE_AVATAR_ICON =
+  "https://xsgames.co/randomusers/assets/avatars/pixel/3.jpg";

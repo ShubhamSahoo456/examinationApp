@@ -23,15 +23,15 @@ function ExamQuestions() {
   const dispatch = useDispatch();
   const [mbtiQuestions, setMbtiQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
-  const countdownValue = Date.now() + 210000;
+  // const countdownValue = Date.now() + 210000;
 
   const goNext = () => {};
   const goPrevious = () => {};
-  const onChange = (val) => {
-    if (typeof val === "number" && 4.95 * 1000 < val && val < 5 * 1000) {
-      console.log("changed!");
-    }
-  };
+  // const onChange = (val) => {
+  //   if (typeof val === "number" && 4.95 * 1000 < val && val < 5 * 1000) {
+  //     console.log("changed!");
+  //   }
+  // };
 
   const fetchMBtiQuestions = async () => {
     const { data } = await axios.get("/question/mbti");
@@ -158,11 +158,11 @@ function ExamQuestions() {
                 </Col>
               ))}
             </Row>
-            <Countdown
+            {/* <Countdown
               title="Countdown"
               value={countdownValue}
               onChange={onChange}
-            />
+            /> */}
             <div className="submit_btn">
               <Button
                 type="primary"
