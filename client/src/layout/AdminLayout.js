@@ -14,8 +14,9 @@ import {
   SettingOutlined,
   TabletFilled,
 } from "@ant-design/icons";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Layout, Menu, Button, theme, Image } from "antd";
+
 const { Header, Sider, Content } = Layout;
 
 const AdminLayout = ({ children }) => {

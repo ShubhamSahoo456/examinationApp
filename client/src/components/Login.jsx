@@ -20,6 +20,12 @@ function Login() {
       if (data?.userObj?.role === "student") {
         navigate("/student/exam/preview");
       }
+      if (data?.userObj?.role === "admin") {
+        navigate("/admin/school");
+      }
+      // if (data?.userObj?.role === "subAdmin") { // navigate to SubAdmin pages
+      //   navigate("/student/exam/preview");
+      // }
     } catch (error) {
       dispatch({
         type: SET_TOAST_STATE,

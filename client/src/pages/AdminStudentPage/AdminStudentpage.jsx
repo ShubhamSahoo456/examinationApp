@@ -10,6 +10,7 @@ import {
   Col,
   Row,
   Button,
+  Radio,
 } from "antd";
 import {
   DownloadOutlined,
@@ -217,25 +218,7 @@ const AdminStudentPage = () => {
                 <Input placeholder="Enter father name" />
               </Form.Item>
             </Col>
-            <Col md={8}>
-              <Form.Item label="Enter Username" required name="userName">
-                <Input placeholder="Enter Username" />
-              </Form.Item>
-            </Col>
-            <Col md={8}>
-              <Form.Item label="Enter Password" required name="password">
-                <Input.Password placeholder="Enter Password" />
-              </Form.Item>
-            </Col>
-            <Col md={8}>
-              <Form.Item
-                label="Enter Confirm Password"
-                required
-                name="confirmPassword"
-              >
-                <Input.Password placeholder="Confirm Your Password" />
-              </Form.Item>
-            </Col>
+
             <Col md={6}>
               <Form.Item
                 label="Admission Number"
@@ -273,7 +256,7 @@ const AdminStudentPage = () => {
               </Form.Item>
             </Col>
 
-            <Col md={16}>
+            <Col md={10}>
               <Form.Item label="Select School" required name="schoolName">
                 <Select allowClear placeholder="Select School">
                   {schoolDropdown.map((school) => (
@@ -282,6 +265,15 @@ const AdminStudentPage = () => {
                     </Select.Option>
                   ))}
                 </Select>
+              </Form.Item>
+            </Col>
+
+            <Col md={6}>
+              <Form.Item label="Gender" required name="gender">
+                <Radio.Group>
+                  <Radio value="male"> Male </Radio>
+                  <Radio value="female"> Female </Radio>
+                </Radio.Group>
               </Form.Item>
             </Col>
 
@@ -297,6 +289,25 @@ const AdminStudentPage = () => {
                     <Input style={{ width: "80%" }} />
                   </Space.Compact>
                 </Space>
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item label="Enter Username" required name="userName">
+                <Input placeholder="Enter Username" />
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item label="Enter Password" required name="password">
+                <Input.Password placeholder="Enter Password" />
+              </Form.Item>
+            </Col>
+            <Col md={8}>
+              <Form.Item
+                label="Enter Confirm Password"
+                required
+                name="confirmPassword"
+              >
+                <Input.Password placeholder="Confirm Your Password" />
               </Form.Item>
             </Col>
             <Col md={8} className="d-none">
