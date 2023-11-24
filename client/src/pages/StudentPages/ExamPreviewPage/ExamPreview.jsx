@@ -1,7 +1,9 @@
 import React from "react";
 import { Button, Col, Collapse, Row } from "antd";
+import { useNavigate, usenavigate } from "react-router-dom";
 
 const ExamPreview = () => {
+  const navigate = useNavigate();
   const items = [
     {
       key: "1",
@@ -9,12 +11,16 @@ const ExamPreview = () => {
       children: (
         <Row>
           <Col md={12}>
-            <h5>MBT</h5>
+            <h5>MBTI</h5>
             <h6>Qusetions : 6</h6>
             <h6>Time : 260 Seconds</h6>
           </Col>
           <Col md={12}>
-            <Button className="bg-success text-light btn-float" size="large">
+            <Button
+              className="bg-success text-light btn-float"
+              size="large"
+              onClick={() => navigate("/student/exam/23456")}
+            >
               Start Exam
             </Button>
           </Col>
@@ -32,7 +38,7 @@ const ExamPreview = () => {
             <h6>Time : 260 Seconds</h6>
           </Col>
           <Col md={12}>
-            <Button className="bg-success text-light btn-float" size="large">
+            <Button className="text-dark btn-float" size="large" disabled>
               Start Exam
             </Button>
           </Col>

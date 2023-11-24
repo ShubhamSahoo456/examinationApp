@@ -1,9 +1,9 @@
-{
-    "questions": [
-        {
-            "question": "The first question has to do with how are you \"ENERGISED\".",
-            "options": {
-                "A": [
+[
+    {
+        "questionText": "The first question has to do with how are you \"ENERGISED\".",
+        "options": [
+            {
+                "text": [
                     "Tolerate noise and crowds",
                     "Talk more than listen",
                     "Communicate with enthusiasm",
@@ -15,7 +15,10 @@
                     "Likes to be center of attention.",
                     "Be distracted easily."
                 ],
-                "B": [
+                "optionNumber": 1
+            },
+            {
+                "text": [
                     "Avoid crowds and seek quiet.",
                     "Listen more than talk.",
                     "Keep enthusiasm to self.",
@@ -26,13 +29,16 @@
                     "Would prefer to socialize in small groups or just do the job by myself.",
                     "Content being on the sidelines.",
                     "Concentrate well."
-                ]
+                ],
+                "optionNumber": 2
             }
-        },
-        {
-            "question": "This question is to find how you GATHER information or what you pay ATTENTION to.",
-            "options": {
-                "A": [
+        ]
+    },
+    {
+        "questionText": "This question is to find how you GATHER information or what you pay ATTENTION to.",
+        "options": [
+            {
+                "text": [
                     "Learn new thing by imitation and observation.",
                     "Value solid, recognizable methods achieved in a step-by-step manner.",
                     "Focus on actual experience",
@@ -43,7 +49,10 @@
                     "Methodical.",
                     "Value realism and common sense."
                 ],
-                "B": [
+                "optionNumber": 1
+            },
+            {
+                "text": [
                     "Learn new things through general concepts.",
                     "Value different or unusual methods achieved via inspiration.",
                     "Focus on possibilities.",
@@ -53,13 +62,16 @@
                     "Use new and different ways to solve problems and teach solutions.",
                     "Leap around in a roundabout way.",
                     "Value imagination and innovation."
-                ]
+                ],
+                "optionNumber": 2
             }
-        },
-        {
-            "question": "This category identifies how you make DECISIONS and reach conclusions.",
-            "options": {
-                "A": [
+        ]
+    },
+    {
+        "questionText": "This category identifies how you make DECISIONS and reach conclusions.",
+        "options": [
+            {
+                "text": [
                     "Have truth as an objective.",
                     "Decide more with my head.",
                     "Question other's findings, because they might be wrong.",
@@ -72,7 +84,10 @@
                     "Feeling valid if they are logical.",
                     "Tolerate occasional queries as to my emotional state in relationships."
                 ],
-                "B": [
+                "optionNumber": 1
+            },
+            {
+                "text": [
                     "Have harmony as a goal.",
                     "Decide more with my heart.",
                     "Agree more with others' findings, because people are worth listening to.",
@@ -84,13 +99,16 @@
                     "Like to please others; show appreciation.",
                     "ANY feeling is valid.",
                     "Appreciate frequent queries as to my emotional state."
-                ]
+                ],
+                "optionNumber": 2
             }
-        },
-        {
-            "question": "Last One...This one has to do with the LIFESTYLE you adopt.",
-            "options": {
-                "A": [
+        ]
+    },
+    {
+        "questionText": "Last One...This one has to do with the LIFESTYLE you adopt.",
+        "options": [
+            {
+                "text": [
                     "Prefer my life to be decisive, imposing my will on it.",
                     "Prefer knowing what they are getting themselves into.",
                     "Feel better after making decisions.",
@@ -102,7 +120,10 @@
                     "Feel better with things planned.",
                     "Settled and Organized."
                 ],
-                "B": [
+                "optionNumber": 1
+            },
+            {
+                "text": [
                     "Seek to adapt my life and experience to what comes along.",
                     "Like adapting to new situations.",
                     "Prefer to keep things open.",
@@ -113,8 +134,9 @@
                     "Ignore \"to-do\" list even if made one.",
                     "Would rather do whatever comes along.",
                     "Tentative. Flexible. Spontaneous."
-                ]
+                ],
+                "optionNumber": 2
             }
-        }
-    ]
-}
+        ]
+    }
+]

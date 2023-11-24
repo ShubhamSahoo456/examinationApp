@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Avatar, Image, Layout, Menu, Popover, theme } from "antd";
 const { Header, Content, Footer } = Layout;
 const StudentLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const { userInfo } = useSelector((state) => state.userLogin);
 
   const hide = () => {
     setOpen(false);
@@ -11,21 +13,17 @@ const StudentLayout = ({ children }) => {
   const handleOpenChange = (newOpen) => {
     setOpen(newOpen);
   };
-  const studentInfo = {
-    name: "Mandan Kumar",
-    rollNo: "12345",
-    fatherName: "Ranjan Kumar",
-  };
-  const Title = "Madan Kumar";
+
+  const Title = userInfo.userObj.fullName;
   const content = (
     <div>
       <p className="m-0">
         <b>Roll No:</b>
-        {studentInfo.rollNo}
+        {userInfo.userObj.admissionNumber}
       </p>
       <p className="m-0">
         <b>Father's Name:</b>
-        {studentInfo.fatherName}
+        {userInfo.userObj.fathersName}
       </p>
       <a className="m-0" onClick={hide}>
         Close
@@ -59,7 +57,7 @@ const StudentLayout = ({ children }) => {
             onOpenChange={handleOpenChange}
           >
             <Avatar style={{ backgroundColor: "#87d068" }} size={40}>
-              M K
+              {userInfo.userObj.fullName.split(" ")[0][0]}
             </Avatar>
             <span className="text-white mx-2">{Title}</span>
           </Popover>

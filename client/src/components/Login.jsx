@@ -1,15 +1,35 @@
-import React, { useEffect } from "react";
-import { Avatar, Space, Segmented, Form, Row, Col, Input, Button } from "antd";
-import { UserOutlined } from "@ant-design/icons";
-import { login } from "../services/auth";
-import SubmitButton from "./Buttons/SubmitButton";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Avatar, Segmented, Form, Row, Col, Input, Button } from "antd";
+import { loginUser } from "../actions/userActions";
+import { SET_TOAST_STATE } from "../constants/constants";
 
 function Login() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleUserSelection = (e) => {
     console.log(e);
   };
-  const onFinish = (values) => {
-    console.log("Success:", values);
+  const onFinish = async (values) => {
+    try {
+      const { data } = await dispatch(loginUser(values));
+
+      console.log(data);
+      if (data.userObj.role === "student") {
+        navigate("/student/exam/preview");
+      }
+    } catch (error) {
+      dispatch({
+        type: SET_TOAST_STATE,
+        payload: {
+          showToast: true,
+          message: error,
+          toastType: "error",
+        },
+      });
+    }
   };
   return (
     <section className="h-100 d-flex align-items-center justify-content-center">
